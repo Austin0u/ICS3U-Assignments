@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
 public class HeronsFormula {
-    public static void main(String[] args) throws Exception {
-        Scanner keyboard = new Scanner(System.in); // Creates scanner object
+    public static void main(String[] args) {
+        Scanner keyboard = new Scanner(System.in);
         
-        // Prompts user the 3 side lengths of the triangle.
+        // Prompts the user for the 3 side lengths of the triangle.
         System.out.print("Please input the length of side A of your triangle: ");
         Double a = keyboard.nextDouble();
         System.out.print("Please input the length of side B of your triangle: ");
