@@ -24,13 +24,13 @@ public class AmbiguousCase {
                 result = "right triangle";
             } else if (a > b) {
                 result = "one triangle";
-            } else if (h < a && a < b) {
+            } else {
                 result = "two triangles (ambigious case)";
             }
         } else { 
             if (a < b || a == h) {
                 result = "no triangle";
-            } else if (a > b) {
+            } else {
                 result = "one triangle";
             }
         }
