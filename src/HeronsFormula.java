@@ -5,11 +5,11 @@ public class HeronsFormula {
         Scanner keyboard = new Scanner(System.in);
         
         // Prompts the user for the 3 side lengths of the triangle.
-        System.out.print("Please input the length of side A of your triangle: ");
+        System.out.println("Please input the length of side A of your triangle: ");
         Double sideA = keyboard.nextDouble();
-        System.out.print("Please input the length of side B of your triangle: ");
+        System.out.println("Please input the length of side B of your triangle: ");
         Double sideB = keyboard.nextDouble();
-        System.out.print("Please input the length of side C of your triangle: ");
+        System.out.println("Please input the length of side C of your triangle: ");
         Double sideC = keyboard.nextDouble();
         keyboard.close();
 
