@@ -14,11 +14,18 @@ public class NewtonsMethod {
             double x1 = 0;
 
             // Continues to guess to obtain a root is found
+            search:
             while (x1 != -1) {
                 // Calculates and prints the computer guess
                 x1 = x - (6 * Math.pow(x, 4) - 13 * Math.pow(x, 3) - 18 * Math.pow(x, 2) + 39 * x + 6) / (24 * Math.pow(x, 3) - 39 * Math.pow(x, 2) - 36 * x + 7);
 
-                if (-0.01 <= x1 && x1-1 <= 0.01)
+                for (int i = 0; i <= 4, i++) {
+                    double[] roots = {-1,-1/2,1/3, 3};
+                    double difference = Math.abs(x - root[i]);
+                    if (difference <= 0.01) {
+                        break sesrch;
+                    }
+                }
 
                 x = x1;
                 System.out.println(x1);
