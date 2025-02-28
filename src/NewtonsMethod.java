@@ -8,11 +8,11 @@ public class NewtonsMethod {
         while (response == 'y') { 
             // Prompts user for an n value (initial guess)
             System.out.print("Please enter an n value: ");
-            double x = keyboard.nextDouble();
+            double x = keyboard.nextDouble(); 
 
             // Uses Newton's method to find roots
             while (true) {
-                // Calculates the function and its derivative
+                // Calculates f(x) and f'(x)
                 double fx = 6 * Math.pow(x, 4) - 13 * Math.pow(x, 3) - 18 * Math.pow(x, 2) + 7 * x + 6;
                 double fpx = 24 * Math.pow(x, 3) - 39 * Math.pow(x, 2) - 36 * x + 7;
 
@@ -20,8 +20,9 @@ public class NewtonsMethod {
                 double x1 = x - fx / fpx;
                 System.out.println(x1);
 
-                // Breaks from loop once the guesses are close enough
-                if (Math.abs(x1 - x) < 0.001) {
+                // Breaks from loop once the guesses are close enough (to -1)
+                if (Math.abs(x1 - x) < 0.000000001) {
+                    x = x1; // Ensures it will output the last guess (otherwise it will do the second last guess)
                     break;
                 }
 
