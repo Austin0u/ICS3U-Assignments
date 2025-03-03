@@ -6,14 +6,14 @@ public class AmbiguousCase {
         
         // Prompts the user for the angle A and two sides
         System.out.print("Please enter the value of angle A (degrees): ");
-        Double angleA = keyboard.nextDouble();
+        double angleA = keyboard.nextDouble();
         System.out.print("Please enter the value of side a: ");
-        Double a = keyboard.nextDouble();
+        double a = keyboard.nextDouble();
         System.out.print("Please enter the value of side b: ");
-        Double b = keyboard.nextDouble();
+        double b = keyboard.nextDouble();
         keyboard.close();
 
-        Double h = b*Math.sin(Math.toRadians(angleA));
+        double h = b*Math.sin(Math.toRadians(angleA));
         String result = "";
 
         // Calculating type of triangle based on case

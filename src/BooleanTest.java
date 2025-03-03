@@ -6,17 +6,17 @@ public class BooleanTest {
         
         // Prompts the user for the 4 booleans
         System.out.print("Please input an A value (true/false): ");
-        Boolean A = keyboard.nextBoolean();
+        boolean A = keyboard.nextBoolean();
         System.out.print("Please input an B value (true/false): ");
-        Boolean B = keyboard.nextBoolean();
+        boolean B = keyboard.nextBoolean();
         System.out.print("Please input an C value (true/false): ");
-        Boolean C = keyboard.nextBoolean();
+        boolean C = keyboard.nextBoolean();
         System.out.print("Please input an D value (true/false): ");
-        Boolean D = keyboard.nextBoolean();
+        boolean D = keyboard.nextBoolean();
         keyboard.close();
 
         // Calculates and prints output result
-        Boolean a = !(B && !D) || !(!B && !C && D) || !(!A && B && C) || !(A && C && !D);        
+        boolean a = !(B && !D) || !(!B && !C && D) || !(!A && B && C) || !(A && C && !D);        
         System.out.println("The output value is " + a);
     }
 }
