@@ -16,7 +16,7 @@ public class AmbiguousCase {
         double h = b*Math.sin(Math.toRadians(angleA));
         String result = "";
 
-        // Calculating type of triangle based on case
+        // Outputs type of triangle based on case
         if (angleA <= 90) { 
             if (a < h) {
                 result = "no triangle";
@@ -25,14 +25,10 @@ public class AmbiguousCase {
             } else if (a > b) {
                 result = "one triangle";
             } else {
-                result = "two triangles (ambigious case)";
+                result = "two triangles (ambiguous case)";
             }
         } else { 
-            if (a < b || a == h) {
-                result = "no triangle";
-            } else {
-                result = "one triangle";
-            }
+            result = (a < b || a == h) ? "no triangle" : "one triangle";
         }
 
         // Prints result

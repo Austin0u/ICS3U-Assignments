@@ -7,11 +7,11 @@ public class BooleanTest {
         // Prompts the user for the 4 booleans
         System.out.print("Please input an A value (true/false): ");
         boolean A = keyboard.nextBoolean();
-        System.out.print("Please input an B value (true/false): ");
+        System.out.print("Please input a B value (true/false): ");
         boolean B = keyboard.nextBoolean();
-        System.out.print("Please input an C value (true/false): ");
+        System.out.print("Please input a C value (true/false): ");
         boolean C = keyboard.nextBoolean();
-        System.out.print("Please input an D value (true/false): ");
+        System.out.print("Please input a D value (true/false): ");
         boolean D = keyboard.nextBoolean();
         keyboard.close();
 
