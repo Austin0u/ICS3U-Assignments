@@ -24,14 +24,18 @@ public class AmbiguousCase {
                 result = "right triangle";
             } else if (a > b) {
                 result = "one triangle";
-            } else {
+            } else if (h < a && a < b) {
                 result = "two triangles (ambiguous case)";
             }
         } else { 
-            result = (a < b || a == h) ? "no triangle" : "one triangle";
+            if (a < b || a == b) {
+                result = " no triangle";
+            } else { // a > b
+                result = "one triangle";
+            }
         }
 
         // Prints result
-        System.out.println("There is " + result);
+        System.out.println("Result: " + result);
     }
 }

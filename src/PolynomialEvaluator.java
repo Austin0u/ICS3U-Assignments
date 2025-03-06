@@ -7,19 +7,13 @@ public class PolynomialEvaluator {
 
         // Prompts the user for a polynomial and an x value
         System.out.println("Please enter a polynomial of the form: f(x)=3x^3 -5x^2 +1x^4 +9x^6 +3.1x^1 +2 ");
-        String polynomial = keyboard.nextLine();
-
+        String polynomial = keyboard.nextLine().substring(5); // Also removes the f(x)=
         System.out.print("Please enter an x value: ");
         double x = keyboard.nextDouble();
         keyboard.close();
 
-        // Removes "f(x)=""
-        if (polynomial.substring(0, 5).equals("f(x)=")) {
-            polynomial = polynomial.substring(5);
-        }
-
         // Tokenizes the polynomial and calculates output
-        StringTokenizer st = new StringTokenizer(polynomial, " ");
+        StringTokenizer st = new StringTokenizer(polynomial);
         double output = 0;
 
         // Iterates through each term
@@ -39,7 +33,7 @@ public class PolynomialEvaluator {
                 // Determines the coeeficient and exponent of the term using the location of x (xIndex)
                 coefficient = Double.parseDouble(term.substring(0, xIndex));
                 System.out.println("--Co:" + coefficient); // DEBUG
-                exponent = Integer.parseInt(term.substring(xIndex+2)); // xIndex +2 to skips the "^"
+                exponent = Integer.parseInt(term.substring(xIndex + 2)); // xIndex +2 to skips the "^"
                 System.out.println("--Ex:" + exponent); // DEBUG
             } else { // The term is a constant
                 coefficient = Double.parseDouble(term);
@@ -51,7 +45,7 @@ public class PolynomialEvaluator {
         }
 
         // Prints final result
-        System.out.println("\nf(" + x + ") = " + output);
+        System.out.println("\nf(" + x + ")=" + output);
 
     }
 }
