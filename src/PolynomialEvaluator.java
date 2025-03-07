@@ -46,6 +46,5 @@ public class PolynomialEvaluator {
 
         // Prints final result
         System.out.println("\nf(" + x + ")=" + output);
-
     }
 }
