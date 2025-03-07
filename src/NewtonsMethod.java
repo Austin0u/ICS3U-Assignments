@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class NewtonsMethod {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        char response = 'y'; // Defaults to y for first interation
-
+        char response = 'y'; // Allows first interation
+        
         while (response == 'y') { 
             // Prompts user for an n value (initial guess)
             System.out.print("Please enter an n value: ");
