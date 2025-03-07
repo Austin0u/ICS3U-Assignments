@@ -13,7 +13,7 @@ public class AmbiguousCase {
         double b = keyboard.nextDouble();
         keyboard.close();
 
-        double h = b*Math.sin(Math.toRadians(angleA));
+        double h = b * Math.sin(Math.toRadians(angleA));
         String result = "";
 
         // Outputs type of triangle based on case
@@ -29,7 +29,7 @@ public class AmbiguousCase {
             }
         } else { 
             if (a < b || a == b) {
-                result = " no triangle";
+                result = "no triangle";
             } else { // a > b
                 result = "one triangle";
             }
