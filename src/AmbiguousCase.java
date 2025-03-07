@@ -13,8 +13,8 @@ public class AmbiguousCase {
         double b = keyboard.nextDouble();
         keyboard.close();
 
-        // Outputs type of triangle based on case
-        if (angleA < 90) { 
+        // Determines type of triangle
+        if (angleA < 90) { // acute angle
             double h = b * Math.sin(Math.toRadians(angleA));
 
             if (a < h) {
@@ -26,7 +26,7 @@ public class AmbiguousCase {
             } else if (h < a && a < b) {
                 System.out.println("There are two triangles (ambiguous case).");
             }
-        } else { 
+        } else { // obtuse angle
             if (a < b || a == b) {
                 System.out.println("There is no triangle.");
             } else { // a > b
