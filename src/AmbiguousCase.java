@@ -13,10 +13,10 @@ public class AmbiguousCase {
         double b = keyboard.nextDouble();
         keyboard.close();
 
-        double h = b * Math.sin(Math.toRadians(angleA));
-
         // Outputs type of triangle based on case
         if (angleA <= 90) { 
+            double h = b * Math.sin(Math.toRadians(angleA));
+
             if (a < h) {
                 System.out.println("There is no triangle.");
             } else if (a == h) {
