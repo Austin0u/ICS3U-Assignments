@@ -14,7 +14,7 @@ public class AmbiguousCase {
         keyboard.close();
 
         // Outputs type of triangle based on case
-        if (angleA <= 90) { 
+        if (angleA < 90) { 
             double h = b * Math.sin(Math.toRadians(angleA));
 
             if (a < h) {
