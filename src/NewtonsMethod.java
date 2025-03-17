@@ -3,41 +3,40 @@ import java.util.Scanner;
 public class NewtonsMethod {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
-        char response = 'y'; // Allows first interation
-        
-        while (response == 'y') { 
-            // Prompts user for an n value (initial guess)
-            System.out.print("Please enter an n value: ");
-            double x = keyboard.nextDouble(); 
+        char response = 'y'; // Allows first iteration
 
-            // Uses Newton's method to find roots
+        while (response == 'y') {
+            // Prompt user for an initial guess
+            System.out.print("Please enter an initial guess: ");
+            double x = keyboard.nextDouble();
+
+            // Use Newton's method to find roots
             while (true) {
-                // Calculates f(x) and f'(x) 
+                // Calculate f(x) and f'(x)
                 double fx = 6 * Math.pow(x, 4) - 13 * Math.pow(x, 3) - 18 * Math.pow(x, 2) + 7 * x + 6;
                 double fpx = 24 * Math.pow(x, 3) - 39 * Math.pow(x, 2) - 36 * x + 7;
 
-                // Calculates the next guess (computer) and outputs each successive approximation
+                // Calculate the next guess and output each successive approximation
                 double x1 = x - fx / fpx;
                 System.out.println(x1);
 
-                // Breaks from loop once the guesses are close enough
-                if (Math.abs(x1 - x) < 0.000000001) { 
-                    x = x1; // Ensures it will output the last guess
+                // Break from loop once the guesses are close enough
+                if (Math.abs(x1 - x) < 0.000000001) {
+                    x = x1; // Ensure it will output the last guess
                     break;
                 }
 
-                x = x1; // set x to the new guess for the next iteration
+                x = x1; // Set x to the new guess for the next iteration
             }
 
-            // Prints the final quess
+            // Print the final guess
             System.out.println("The root is at " + x);
 
-            // Prompts user if they want to retry
-            System.out.print("Do you to try again? (y/n): ");
+            // Prompt user if they want to retry
+            System.out.print("Do you want to try again? (y/n): ");
             response = keyboard.next().toLowerCase().charAt(0);
-        } 
+        }
 
         keyboard.close();
-
     }
 }
