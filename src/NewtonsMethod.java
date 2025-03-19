@@ -6,7 +6,7 @@ public class NewtonsMethod {
 
         while (true) {
             // Prompt user for an initial guess
-            System.out.print("Please enter an initial guess: ");
+            System.out.print("Please enter an initial root guess: ");
             double x = keyboard.nextDouble();
 
             // Use Newton's method to find roots
