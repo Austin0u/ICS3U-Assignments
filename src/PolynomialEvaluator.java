@@ -12,39 +12,32 @@ public class PolynomialEvaluator {
         double x = keyboard.nextDouble();
         keyboard.close();
 
-        // Tokenizes the polynomial and calculates output
         StringTokenizer st = new StringTokenizer(polynomial);
         double output = 0;
 
-        // Iterates through each term
         while (st.hasMoreTokens()) {
             String term = st.nextToken();
-            System.out.println("Full Term:" + term); // DEBUG
 
             // Declares local variables for the components of the term (Default: 1x^0)
             double coefficient = 1.0;
             int exponent = 0;
             int xIndex;
 
-            // Determines if the term is a constant
-            if (term.contains("x")) {
+            // Determines if the term is a constant or not
+            if (term.contains("x")) { // Not constant
                 xIndex = term.indexOf("x");
 
                 // Determines the coeeficient and exponent of the term using the location of x (xIndex)
                 coefficient = Double.parseDouble(term.substring(0, xIndex));
-                System.out.println("--Co:" + coefficient); // DEBUG
-                exponent = Integer.parseInt(term.substring(xIndex + 2)); // xIndex +2 to skips the "^"
-                System.out.println("--Ex:" + exponent); // DEBUG
+                exponent = Integer.parseInt(term.substring(xIndex + 2)); // xIndex +2 skips the "^"
             } else { // The term is a constant
                 coefficient = Double.parseDouble(term);
             }
 
-            // Calculates the output
             output += coefficient * Math.pow(x, exponent);
-            System.out.println("---- Term Result: " + coefficient * Math.pow(x, exponent)); // DEBUG
         }
 
         // Prints final result
-        System.out.println("\nf(" + x + ")=" + output);
+        System.out.println("f(" + x + ")=" + output);
     }
 }

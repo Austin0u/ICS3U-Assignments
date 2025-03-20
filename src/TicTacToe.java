@@ -41,7 +41,7 @@ public class TicTacToe {
         return false; // Placeholder return value
     }
 
-    public void switchPlayer() {
+    public static void switchPlayer() {
         // Method to switch the current player
         player = (player == 'O') ? 'X' : 'O'; // Switches player
         System.out.println("Player " + player + "'s turn");
