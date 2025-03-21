@@ -49,7 +49,7 @@ public class TicTacToe {
 
         // Check for a diagonal win
         if (board[0][0] == player && board[1][1] == player && board[2][2] == player ||
-            board[0][2] == player && board[1][1] == player && board[2][0] == player) {
+                board[0][2] == player && board[1][1] == player && board[2][0] == player) {
             return true;
         }
 
@@ -68,8 +68,8 @@ public class TicTacToe {
     }
 
     public static void switchPlayer() {
-        player = (player == 'O') ? 'X' : 'O'; 
-        System.out.println("\n--------- PLAYER " + player + "'S TURN ---------"); 
+        player = (player == 'O') ? 'X' : 'O';
+        System.out.println("\n--------- PLAYER " + player + "'S TURN ---------");
     }
 
     public static void main(String[] args) {
@@ -84,9 +84,9 @@ public class TicTacToe {
         System.out.println("3. Moves are entered using coordinates (column and row), using numbers from 1-3.");
         System.out.println(" -  The columns is the horizontal placement.");
         System.out.println(" -  The row is the vertical placement.");
-        System.out.println("4. The first player to get 3 of their marks in a row (horizontally, vertically, or diagonally) wins!");
+        System.out.println(
+                "4. The first player to get 3 of their marks in a row (horizontally, vertically, or diagonally) wins!");
         System.out.println(" - If this doesn't happen, it results in a tie.");
-
 
         while (true) { // Main game loop
             System.out.println("\n=========== GAME START ============");
@@ -109,7 +109,7 @@ public class TicTacToe {
                         System.out.println("\nInvalid move, that spot is already occupied. Please try again.\n");
                         continue;
                     }
-                } catch (InputMismatchException exception) { 
+                } catch (InputMismatchException exception) {
                     System.out.println("\nInvalid move, please enter an integer.\n");
                     keyboard.next(); // clear the invalid input
                     continue;
@@ -135,8 +135,8 @@ public class TicTacToe {
             System.out.print("Do you want to play again? (y/n): ");
             if (keyboard.next().toLowerCase().charAt(0) != 'y') {
                 break;
-            } 
-            
+            }
+
             player = 'X'; // Resets player to X
         }
 
