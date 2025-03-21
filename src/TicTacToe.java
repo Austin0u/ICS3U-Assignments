@@ -15,10 +15,10 @@ public class TicTacToe {
     }
 
     public static void displayBoard() {
-        System.out.println("    1   2   3"); // adds column numbers
+        System.out.println("    1   2   3"); // Adds column numbers
         for (int row = 0; row < board.length; row++) {
             System.out.println("  +---+---+---+");
-            System.out.print((row + 1) + " |");
+            System.out.print((row + 1) + " |"); // Adds row numbers
             for (int col = 0; col < board[row].length; col++) {
                 System.out.print(" " + board[row][col] + " |");
             }
@@ -117,8 +117,6 @@ public class TicTacToe {
                     System.out.println("\nInvalid move, please enter a integer between 1-3.\n");
                     continue;
                 }
-                
-                
 
                 // Checks win and draw, closes game if either is true
                 if (checkWin()) {
