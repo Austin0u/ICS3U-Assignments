@@ -18,18 +18,17 @@ public class TicTacToe {
         System.out.println("    1   2   3"); // Adds column numbers
         for (int row = 0; row < board.length; row++) {
             System.out.println("  +---+---+---+");
-            System.out.print((row + 1) + " |"); // Adds row numbers
+            System.out.print((row + 1) + " |"); // Adds row numbers and divider
             for (int col = 0; col < board[row].length; col++) {
                 System.out.print(" " + board[row][col] + " |");
             }
-            System.out.println();
+            System.out.println(); // Starts on new line
         }
         System.out.println("  +---+---+---+"); // closes board
     }
 
     public static void makeMove(int row, int col) {
         board[row][col] = player;
-        displayBoard();
     }
 
     public static boolean checkWin() {
@@ -91,18 +90,19 @@ public class TicTacToe {
         while (true) { // Main game loop
             System.out.println("\n=========== GAME START ============");
             initializeBoard();
-            displayBoard();
             System.out.println("\n--------- PLAYER " + player + "'S TURN ---------"); // Displays STARTING player
 
             while (true) { // Loops until a win or draw is reached
                 try {
+                    displayBoard();
                     System.out.println("Enter your move (column and row): ");
                     System.out.print("> Column: ");
                     int col = keyboard.nextInt() - 1;
+                    keyboard.nextLine(); // clears in case the user inputs e.g. "1 3"
                     System.out.print("> Row: ");
                     int row = keyboard.nextInt() - 1;
 
-                    // Checks if the there is already a mark in the location
+                    // Checks if space is already occupied
                     if (board[row][col] == ' ') {
                         makeMove(row, col);
                     } else {
@@ -111,7 +111,7 @@ public class TicTacToe {
                     }
                 } catch (InputMismatchException exception) {
                     System.out.println("\nInvalid move, please enter an integer.\n");
-                    keyboard.next(); // clear the invalid input
+                    keyboard.nextLine(); // clear the invalid input (or else it breaks)
                     continue;
                 } catch (ArrayIndexOutOfBoundsException exception) {
                     System.out.println("\nInvalid move, please enter a integer between 1-3.\n");
@@ -120,10 +120,12 @@ public class TicTacToe {
 
                 // Checks win and draw, closes game if either is true
                 if (checkWin()) {
-                    System.out.println("\nPlayer " + player + " wins!");
+                    System.out.println("====================================");
+                    System.out.println("           Player " + player + " wins!");
                     break;
                 } else if (checkDraw()) {
-                    System.out.println("\nIt's a draw!");
+                    System.out.println("====================================");
+                    System.out.println("            It's a draw!");
                     break;
                 }
 
