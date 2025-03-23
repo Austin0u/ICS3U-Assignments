@@ -121,10 +121,12 @@ public class TicTacToe {
                 // Checks win and draw, closes game if either is true
                 if (checkWin()) {
                     System.out.println("====================================");
+                    displayBoard();
                     System.out.println("           Player " + player + " wins!");
                     break;
                 } else if (checkDraw()) {
                     System.out.println("====================================");
+                    displayBoard();
                     System.out.println("            It's a draw!");
                     break;
                 }
