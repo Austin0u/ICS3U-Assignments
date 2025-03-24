@@ -79,13 +79,13 @@ public class TicTacToe {
         System.out.println("       Welcome to Tic Tac Toe!");
         System.out.println("=========== INSTRUCTIONS ===========");
         System.out.println("1. Players take turns making moves, starting with player " + player + ".");
-        System.out.println("2. Each move will place the active player's mark (X or O) at the coordinate location.");
-        System.out.println("3. Moves are entered using coordinates (column and row), using numbers from 1-3.");
-        System.out.println(" -  The columns is the horizontal placement.");
-        System.out.println(" -  The row is the vertical placement.");
         System.out.println(
-                "4. The first player to get 3 of their marks in a row (horizontally, vertically, or diagonally) wins!");
-        System.out.println(" - If this doesn't happen, it results in a tie.");
+                "2. Each move will place the active player's mark (X or O) at the chosen location on the 3x3 board.");
+        System.out.println("3. Moves are entered using coordinates (column and row), using numbers from 1-3.");
+        System.out.println(" -  The column number is the horizontal placement (left to right).");
+        System.out.println(" -  The row number is the vertical placement (up to down).");
+        System.out.println("4. The first player to get 3 of their marks in a row (horizontally, vertically, or diagonally) wins!");
+        System.out.println(" - If all spaces are occupied and there is no win, it results in a tie.");
 
         while (true) { // Main game loop
             System.out.println("\n=========== GAME START ============");
@@ -95,7 +95,7 @@ public class TicTacToe {
             while (true) { // Loops until a win or draw is reached
                 try {
                     displayBoard();
-                    System.out.println("Enter your move (column and row): ");
+                    System.out.println("Please enter your move (column and row): ");
                     System.out.print("> Column: ");
                     int col = keyboard.nextInt() - 1;
                     keyboard.nextLine(); // clears in case the user inputs e.g. "1 3"
@@ -106,15 +106,18 @@ public class TicTacToe {
                     if (board[row][col] == ' ') {
                         makeMove(row, col);
                     } else {
-                        System.out.println("\nInvalid move, that spot is already occupied. Please try again.\n");
+                        System.out.println("\nINVALID MOVE: that spot is already occupied.");
+                        System.out.println("Please try again.\n");
                         continue;
                     }
                 } catch (InputMismatchException exception) {
-                    System.out.println("\nInvalid move, please enter an integer.\n");
+                    System.out.println("\nINVALID MOVE: please enter an integer.");
+                    System.out.println("Please try again.\n");
                     keyboard.nextLine(); // clear the invalid input (or else it breaks)
                     continue;
                 } catch (ArrayIndexOutOfBoundsException exception) {
-                    System.out.println("\nInvalid move, please enter a integer between 1-3.\n");
+                    System.out.println("\nINVALID MOVE: please enter a integer between 1-3.");
+                    System.out.println("Please try again.\n");
                     continue;
                 }
 
@@ -122,12 +125,12 @@ public class TicTacToe {
                 if (checkWin()) {
                     System.out.println("====================================");
                     displayBoard();
-                    System.out.println("           Player " + player + " wins!");
+                    System.out.println("Player " + player + " wins!");
                     break;
                 } else if (checkDraw()) {
                     System.out.println("====================================");
                     displayBoard();
-                    System.out.println("            It's a draw!");
+                    System.out.println("It's a draw!");
                     break;
                 }
 
