@@ -21,13 +21,11 @@ public class PolynomialEvaluator {
             // Declares local variables for the components of the term (Default: 1x^0)
             double coefficient = 1.0;
             int exponent = 0;
-            int xIndex;
 
             // Determines if the term is a constant or not
             if (term.contains("x")) { // Not constant
-                xIndex = term.indexOf("x");
+                int xIndex = term.indexOf("x");
 
-                // Determines the coeeficient and exponent of the term using the location of x (xIndex)
                 coefficient = Double.parseDouble(term.substring(0, xIndex));
                 exponent = Integer.parseInt(term.substring(xIndex + 2)); // xIndex +2 skips the "^"
             } else { // The term is a constant
