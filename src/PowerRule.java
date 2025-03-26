@@ -7,9 +7,9 @@ public class PowerRule {
         String secondDerivative = "f''(x) =";
 
         // Prompts the user for the coefficients and exponents (as strings, then splits to store into arrays)
-        System.out.println("Please enter your coefficients: ");
+        System.out.println("Please enter your coefficients, separated by soaces: ");
         String[] coefficients = keyboard.nextLine().split(" ");
-        System.out.println("Please enter your exponents: ");
+        System.out.println("Please enter your exponents, separated by spaces: ");
         String[] exponents = keyboard.nextLine().split(" ");
         keyboard.close();
 
