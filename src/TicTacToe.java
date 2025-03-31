@@ -3,7 +3,8 @@ import java.util.InputMismatchException;
 
 public class TicTacToe {
     private static char[][] board = new char[3][3];
-    private static char player = 'X'; // Configure this to set starting player
+    private static char STARTING_PLAYER = 'X'; 
+    private static char player = STARTING_PLAYER; 
 
     public static void initializeBoard() {
         // Fills the board with empty spaces (aka resets the board)
@@ -76,7 +77,7 @@ public class TicTacToe {
 
         // Intro to game
         System.out.println("====================================");
-        System.out.println("       Welcome to Tic Tac Toe!");
+        System.out.println("      Welcome to Tic Tac Toe!");
         System.out.println("=========== INSTRUCTIONS ===========");
         System.out.println("1. Players take turns making moves, starting with player " + player + ".");
         System.out.println(
@@ -144,7 +145,7 @@ public class TicTacToe {
                 break;
             }
 
-            player = 'X'; // Resets player to X
+            player = STARTING_PLAYER; // Resets player to X
         }
 
         keyboard.close();
