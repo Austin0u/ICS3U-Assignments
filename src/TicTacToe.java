@@ -6,6 +6,11 @@ public class TicTacToe {
     private static char STARTING_PLAYER = 'X'; 
     private static char player = STARTING_PLAYER; 
 
+    public static void switchPlayer() {
+        player = (player == 'O') ? 'X' : 'O';
+        System.out.println("\n--------- PLAYER " + player + "'S TURN ---------");
+    }
+
     public static void initializeBoard() {
         // Fills the board with empty spaces (aka resets the board)
         for (int row = 0; row < board.length; row++) {
@@ -65,11 +70,6 @@ public class TicTacToe {
             }
         }
         return true; // No more moves possible
-    }
-
-    public static void switchPlayer() {
-        player = (player == 'O') ? 'X' : 'O';
-        System.out.println("\n--------- PLAYER " + player + "'S TURN ---------");
     }
 
     public static void main(String[] args) {
