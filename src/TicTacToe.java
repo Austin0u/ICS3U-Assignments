@@ -28,9 +28,9 @@ public class TicTacToe {
             for (int col = 0; col < board[row].length; col++) {
                 System.out.print(" " + board[row][col] + " |");
             }
-            System.out.println(); // Starts on new line
+            System.out.println(); 
         }
-        System.out.println("  +---+---+---+"); // closes board
+        System.out.println("  +---+---+---+"); 
     }
 
     public static void makeMove(int row, int col) {
@@ -58,7 +58,7 @@ public class TicTacToe {
             return true;
         }
 
-        return false; // no win found yet
+        return false; // no win found
     }
 
     public static boolean checkDraw() {
@@ -91,7 +91,7 @@ public class TicTacToe {
         while (true) { // Main game loop
             System.out.println("\n=========== GAME START ============");
             initializeBoard();
-            System.out.println("\n--------- PLAYER " + player + "'S TURN ---------"); // Displays STARTING player
+            System.out.println("\n--------- PLAYER " + player + "'S TURN ---------"); 
 
             while (true) { // Loops until a win or draw is reached
                 try {
@@ -99,7 +99,7 @@ public class TicTacToe {
                     System.out.println("Please enter your move (column and row): ");
                     System.out.print("> Column: ");
                     int col = keyboard.nextInt() - 1;
-                    keyboard.nextLine(); // clears in case the user inputs e.g. "1 3"
+                    keyboard.nextLine(); // clears in case the user inputs with spaces e.g. "1 3"
                     System.out.print("> Row: ");
                     int row = keyboard.nextInt() - 1;
 
@@ -145,7 +145,7 @@ public class TicTacToe {
                 break;
             }
 
-            player = STARTING_PLAYER; // Resets player to X
+            player = STARTING_PLAYER; // Resets to starting player every game
         }
 
         keyboard.close();
