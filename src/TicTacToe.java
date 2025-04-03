@@ -3,7 +3,7 @@ import java.util.InputMismatchException;
 
 public class TicTacToe {
     private static char[][] board = new char[3][3];
-    private static char STARTING_PLAYER = 'X'; 
+    private static final char STARTING_PLAYER = 'X'; 
     private static char player = STARTING_PLAYER; 
 
     public static void switchPlayer() {
