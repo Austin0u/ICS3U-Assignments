@@ -4,7 +4,8 @@ import java.util.InputMismatchException;
 public class TicTacToe {
     private static char[][] board = new char[3][3];
     private static final char STARTING_PLAYER = 'X'; 
-    private static char player = STARTING_PLAYER; 
+    private static char player = STARTING_PLAYER;
+    private static int moves = 0;
 
     public static void switchPlayer() {
         player = (player == 'O') ? 'X' : 'O';
@@ -18,6 +19,8 @@ public class TicTacToe {
                 board[row][col] = ' ';
             }
         }
+
+        moves = 0;
     }
 
     public static void displayBoard() {
@@ -35,6 +38,7 @@ public class TicTacToe {
 
     public static void makeMove(int row, int col) {
         board[row][col] = player;
+        moves++;
     }
 
     public static boolean checkWin() {
@@ -55,22 +59,22 @@ public class TicTacToe {
         // Check for a diagonal win
         if (board[0][0] == player && board[1][1] == player && board[2][2] == player ||
                 board[0][2] == player && board[1][1] == player && board[2][0] == player) {
-            return true;
+                    return true;
         }
 
         return false; // no win found
     }
 
-    public static boolean checkDraw() {
-        for (int row = 0; row < 3; row++) {
-            for (int col = 0; col < 3; col++) {
-                if (board[row][col] == ' ') {
-                    return false; // still more moves possible
-                }
-            }
-        }
-        return true; // No more moves possible
-    }
+    // public static boolean checkDraw() {
+    //     for (int row = 0; row < 3; row++) {
+    //        for (int col = 0; col < 3; col++) {
+    //             if (board[row][col] == ' ') {
+    //                 removes false; // still more moves possible
+    //             }
+    //         }
+    //     }
+    //     removes true; // No more moves possible
+    // } 
 
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
@@ -79,7 +83,7 @@ public class TicTacToe {
         System.out.println("====================================");
         System.out.println("      Welcome to Tic Tac Toe!");
         System.out.println("=========== INSTRUCTIONS ===========");
-        System.out.println("1. Players take turns making moves, starting with player " + player + ".");
+        System.out.println("1. Players take movess making moves, starting with player " + player + ".");
         System.out.println(
                 "2. Each move will place the active player's mark (X or O) at the chosen location on the 3x3 board.");
         System.out.println("3. Moves are entered using coordinates (column and row), using numbers from 1-3.");
@@ -128,7 +132,7 @@ public class TicTacToe {
                     displayBoard();
                     System.out.println("Player " + player + " wins!");
                     break;
-                } else if (checkDraw()) {
+                } else if (moves == 9) {
                     System.out.println("====================================");
                     displayBoard();
                     System.out.println("It's a draw!");
