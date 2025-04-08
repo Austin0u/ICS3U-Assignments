@@ -2,39 +2,38 @@ package Point;
 
 public class Main {
     public static void main(String[] args) {
-        Point point0 = new Point();
-        Point point1 = new Point(-3, 4);
-        Point point2 = new Point(7, 1);
+        Point p1 = new Point(3, 2);
+        Point p2 = new Point(3, -10);
 
-        System.out.print("Point 0: ");
-        point0.displayCoordinate();
-        System.out.print("Point 1: ");
-        point1.displayCoordinate();
-        System.out.print("Point 2: ");
-        point2.displayCoordinate();
+        System.out.print("\nPoint 1: ");
+        p1.displayCoordinate();
+        System.out.print("\nPoint 2: ");
+        p2.displayCoordinate();
 
-        Point sum = point1.sum(point2);
-        System.out.print("Sum of Point 1 and Point 2: ");
+        System.out.print("\n---------------------------------------\n");
+
+        Point sum = p1.sum(p2);
+        System.out.print("Sum: ");
         sum.displayCoordinate();
 
-        Point difference = point1.difference(point2);
-        System.out.print("Difference of Point 1 and Point 2: ");
+        Point difference = p1.difference(p2);
+        System.out.print("Difference: ");
         difference.displayCoordinate();
 
-        double distance = point1.distance(point2);
-        System.out.println("Distance between Point 1 and Point 2: " + distance);
+        double distance = p1.distance(p2);
+        System.out.println("Distance between points: " + distance);
 
-        Point midpoint = point1.midpoint(point2);
-        System.out.print("Midpoint of Point 1 and Point 2: ");
+        Point midpoint = p1.midpoint(p2);
+        System.out.print("Midpoint: ");
         midpoint.displayCoordinate();
 
-        double slope = point1.slope(point2);
-        System.out.println("Slope of the line through Point 1 and Point 2: " + slope);    
+        double slope = p1.slope(p2);
+        System.out.println("Slope of the line: " + slope);    
 
-        double yIntercept = point1.yIntercept(point2);
-        System.out.println("y-intercept of the line through Point 1 and Point 2: " + yIntercept); 
+        double yIntercept = p1.yIntercept(p2);
+        System.out.println("y-intercept of the line : " + yIntercept); 
 
-        System.out.print("Linear equation of the line through Point 1 and Point 2: ");
-        point1.linearEquation(point2);
+        System.out.print("Linear equation: ");
+        p1.linearEquation(p2);
     }
 }

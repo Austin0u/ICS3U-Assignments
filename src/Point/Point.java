@@ -39,7 +39,7 @@ public class Point {
     }
 
     public Point midpoint(Point point) {
-        return new Point((sum(point).getX()) / 2, (sum(point).getX()) / 2);
+        return new Point((sum(point).getX()) / 2, (sum(point).getY()) / 2);
     }
 
     public double slope(Point point) {
@@ -51,7 +51,13 @@ public class Point {
     }
 
     public void linearEquation(Point point) {
-        
-        System.out.println("y = " + slope(point) + "x" + ((yIntercept(point) > 0) ? " +" : " ") + yIntercept(point));
+        double slope = slope(point);
+        double yInt = yIntercept(point);
+
+        if (Double.isInfinite(slope)) {
+
+        } else if () {
+            System.out.prinln("y = " + ((slope != 1) ? slope : "") + "x" + ((yInt != 0) ? ((yInt > 0) ? " +" : " ") + yInt : ""));
     }
+    
 }
