@@ -13,7 +13,7 @@ public class Dictionary {
         String line = "";
 
         try {
-            // Read file and adds words to the dictionary hashset
+            // Read file and adds words to a hashset
             inputStream = new BufferedReader(new FileReader("dictionary.txt"));
 
             while ((line = inputStream.readLine()) != null) {
