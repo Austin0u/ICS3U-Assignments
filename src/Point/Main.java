@@ -2,8 +2,8 @@ package Point;
 
 public class Main {
     public static void main(String[] args) {
-        Point p1 = new Point(3, 2);
-        Point p2 = new Point(3, -10);
+        Point p1 = new Point(2, 3);
+        Point p2 = new Point(3, 3);
 
         System.out.print("\nPoint 1: ");
         p1.displayCoordinate();

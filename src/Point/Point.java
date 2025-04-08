@@ -54,10 +54,12 @@ public class Point {
         double slope = slope(point);
         double yInt = yIntercept(point);
 
-        if (Double.isInfinite(slope)) {
-
-        } else if () {
-            System.out.prinln("y = " + ((slope != 1) ? slope : "") + "x" + ((yInt != 0) ? ((yInt > 0) ? " +" : " ") + yInt : ""));
-    }
-    
+        if (Double.isInfinite(slope)) { // handles vertical lines
+            System.out.println("x = " + x);
+        } else if (slope == 0) { // handles horizontal lines
+            System.out.println("y = " + yInt); 
+        } else {
+            System.out.println("y = " + "x" + ((yInt != 0) ? ((yInt > 0) ? " +" : " ") + yInt : ""));
+        } 
+    }    
 }
