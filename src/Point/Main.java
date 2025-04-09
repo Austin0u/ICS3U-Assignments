@@ -2,16 +2,19 @@ package Point;
 
 public class Main {
     public static void main(String[] args) {
-        Point p1 = new Point(2, 3);
-        Point p2 = new Point(3, 3);
+        Point p0 = new Point(); // Test other constructor
+        Point p1 = new Point(5, 10);
+        Point p2 = new Point(10, 10);
 
+        System.out.print("\nPoint 0: ");
+        p0.displayCoordinate();
         System.out.print("\nPoint 1: ");
         p1.displayCoordinate();
         System.out.print("\nPoint 2: ");
         p2.displayCoordinate();
 
         System.out.print("\n---------------------------------------\n");
-
+        
         Point sum = p1.sum(p2);
         System.out.print("Sum: ");
         sum.displayCoordinate();

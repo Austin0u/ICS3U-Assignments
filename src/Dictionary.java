@@ -19,22 +19,6 @@ public class Dictionary {
             while ((line = inputStream.readLine()) != null) {
                 dictionary.add(line.toLowerCase());
             }
-
-            // Prompt user for sentence input
-            System.out.println("Please enter a sentence: ");
-            String sentence[] = keyboard.nextLine().split(" ");
-            keyboard.close();
-
-            // Spell check
-            System.out.println("\nSpell check of your sentence:");
-
-            for (int i = 0; i < sentence.length; i++) {
-                if (dictionary.contains(sentence[i].toLowerCase())) {
-                    System.out.println((i + 1) + ". " + sentence[i] + " <valid>");
-                } else {
-                    System.out.println((i + 1) + ". " + sentence[i] + " <invalid>");
-                }
-            }
         } catch (FileNotFoundException e) {
             System.out.println("Error opening file");
         } catch (IOException e) {
@@ -42,6 +26,22 @@ public class Dictionary {
         } finally {
             if (inputStream != null) {
                 inputStream.close();
+            }
+        }
+
+        // Prompt user for sentence input
+        System.out.println("Please enter a sentence: ");
+        String sentence[] = keyboard.nextLine().split(" ");
+        keyboard.close();
+
+        // Spell check
+        System.out.println("\nSpell check of your sentence:");
+
+        for (int i = 0; i < sentence.length; i++) {
+            if (dictionary.contains(sentence[i].toLowerCase())) {
+                System.out.println((i + 1) + ". " + sentence[i] + " <valid>");
+            } else {
+                System.out.println((i + 1) + ". " + sentence[i] + " <invalid>");
             }
         }
     }

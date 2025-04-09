@@ -57,9 +57,9 @@ public class Point {
         if (Double.isInfinite(slope)) { // handles vertical lines
             System.out.println("x = " + x);
         } else if (slope == 0) { // handles horizontal lines
-            System.out.println("y = " + yInt); 
+            System.out.println("y = " + y); 
         } else {
-            System.out.println("y = " + "x" + ((yInt != 0) ? ((yInt > 0) ? " +" : " ") + yInt : ""));
+            System.out.println("y = " + slope + "x" + ((yInt != 0) ? ((yInt > 0) ? " +" : " ") + yInt : ""));
         } 
     }    
 }
