@@ -23,7 +23,8 @@ public class Point {
     }
 
     public void displayCoordinate() {
-        System.out.println("(" + x + ", " + y + ")");
+        System.out.println("The x-coordinate is: " + x);
+        System.out.println("The y-coordinate is: " + y);
     }
 
     public Point sum(Point point) {
@@ -35,15 +36,18 @@ public class Point {
     }
 
     public double distance(Point point) {
-        return Math.sqrt(Math.pow(point.difference(this).getX(), 2) + Math.pow(point.difference(this).getY(), 2));
+        Point diff = point.difference(this);
+        return Math.sqrt(Math.pow(diff.getX(), 2) + Math.pow(diff.getY(), 2));
     }
 
     public Point midpoint(Point point) {
-        return new Point((sum(point).getX()) / 2, (sum(point).getY()) / 2);
+        Point sum = sum(point);
+        return new Point((sum.getX()) / 2, (sum.getY()) / 2);
     }
 
     public double slope(Point point) {
-        return (point.difference(this).getY()) / (point.difference(this).getX());
+        Point diff = point.difference(this);
+        return (diff.getY()) / (diff.getX());
     }
 
     public double yIntercept(Point point) {
