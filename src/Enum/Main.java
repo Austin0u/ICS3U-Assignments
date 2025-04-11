@@ -6,7 +6,7 @@ public class Main {
         double atoms = 3.2 * Math.pow(10,25);
         double moles = 25.3;
 
-        for (Elem)
-        Element hydrogen = new Element(HYDROGEN)
+        for )
+        Element hydrogen = new Element(element)
     }
 }
