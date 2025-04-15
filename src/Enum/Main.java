@@ -8,7 +8,7 @@ public class Main {
         
         for (Element element : Element.values()) {
             ElementTest elementTest = new ElementTest(element);
-
+            System.out.println("-------------------------------------------");
             elementTest.test(mass, atoms, moles);
         }
 
