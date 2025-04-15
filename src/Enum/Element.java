@@ -12,16 +12,16 @@ public enum Element {
     FLUORINE("F", 9, 18.998),
     NEON("Ne", 10, 20.180);
 
-    private String symbol = "";
+    private String symbol;
     private int atomicNumber;
-    private double molarMass;
+    private double atomicMass;
     private final double avogadrosNumber = 6.02214076 * Math.pow(10, 23);
 
 
-    Element(String symbol, int atomicNumber, double molarMass) {
+    Element(String symbol, int atomicNumber, double atomicMass) {
         this.symbol = symbol;
         this.atomicNumber = atomicNumber;
-        this.molarMass = molarMass;
+        this.atomicMass = atomicMass;
     }
 
     public String getSymbol() {
@@ -32,16 +32,16 @@ public enum Element {
         return atomicNumber;
     }
 
-    public double getMolarMass() {
-        return molarMass;
+    public double getAtomicMass() {
+        return atomicMass;
     }
 
     public double massToMoles(double mass) {
-        return mass / molarMass;
+        return mass / atomicMass;
     }
 
     public double molesToMass(double moles) {
-        return moles * molarMass;
+        return moles * atomicMass;
     }
 
     public double atomsToMoles(double atoms) {
