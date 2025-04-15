@@ -15,7 +15,7 @@ public enum Element {
     private String symbol;
     private int atomicNumber;
     private double atomicMass;
-    private final double avogadrosNumber = 6.02214076 * Math.pow(10, 23);
+    private final double avogadrosNumber = 6.02214076e23;
 
 
     Element(String symbol, int atomicNumber, double atomicMass) {
