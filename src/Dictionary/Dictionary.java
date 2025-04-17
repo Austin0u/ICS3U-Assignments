@@ -1,3 +1,5 @@
+package Dictionary;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileNotFoundException;
@@ -14,7 +16,7 @@ public class Dictionary {
 
         try {
             // Read file and adds words to a hashset
-            inputStream = new BufferedReader(new FileReader("dictionary.txt"));
+            inputStream = new BufferedReader(new FileReader("src\\Dictionary\\dictionary.txt"));
 
             while ((line = inputStream.readLine()) != null) {
                 dictionary.add(line.toLowerCase());
