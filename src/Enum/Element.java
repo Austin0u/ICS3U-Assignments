@@ -5,7 +5,7 @@ public enum Element {
     HELIUM("He", 2, 4.0026),
     LITHIUM("Li", 3, 6.9410),
     BERYLLIUM("Be", 4, 9.0122),
-    BORON("Be", 5, 10.811),
+    BORON("B", 5, 10.811),
     CARBON("C", 6, 12.011),
     NITROGEN("N", 7, 14.007),
     OXYGEN("O", 8, 15.9990),
