@@ -8,7 +8,7 @@ public class ElementTest {
     }
 
     public void test(double mass, double atoms, double moles) {
-        String elementName = element.name().substring(0, 1).toUpperCase() + element.name().substring(1).toLowerCase();
+        String elementName = element.toString().substring(0, 1) + element.name().substring(1).toLowerCase();
 
         System.out.println("Element: " + elementName + " (" + element.getSymbol() + ")");
         System.out.println(" > Atomic number: " + element.getAtomicNumber());
