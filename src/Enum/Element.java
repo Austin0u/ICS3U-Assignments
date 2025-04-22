@@ -17,7 +17,6 @@ public enum Element {
     private double atomicMass;
     private final double avogadrosNumber = 6.02214076e23;
 
-
     Element(String symbol, int atomicNumber, double atomicMass) {
         this.symbol = symbol;
         this.atomicNumber = atomicNumber;
@@ -60,5 +59,3 @@ public enum Element {
         return molesToMass(atomsToMoles(atoms));
     }
 }
-
-
