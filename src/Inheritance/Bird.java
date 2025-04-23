@@ -20,53 +20,56 @@ public class Bird {
     }
 
     // Getters and Setters
-    public String getName() {
+    protected String getName() {
         return name;
     }
 
-    public int getAge() {
+    protected int getAge() {
         return age;
     }
 
-    public boolean canFly() {
+    protected boolean canFly() {
         return canFly;
     }
 
-    public int eggCount() {
+    protected int eggCount() {
         return eggCount;
     }   
 
-    public void setName(String name) {
+    protected void setName(String name) {
         this.name = name;
     }
 
-    public void setAge(int age) {
+    protected void setAge(int age) {
         this.age = age;
     }
 
-    
-    public boolean isInAir() {
+    protected boolean isInAir() {
         return isFlying;
     }
     
     // Methods
-    public void layEgg() {
+    protected void layEgg() {
         eggCount++;
     }
 
-    public int ageInBirdYears() {
-        return age * 5;
-    }
-
-    public void startFlying() {
+    protected void startFlying() {
         if (canFly) {
             isFlying = true;
             System.out.println(name + " has started flying");
         }
     }
 
-    public void stopFlying() {
+    protected void stopFlying() {
         isFlying = false;
         System.out.println(name + " has stopped flying");
+    }
+
+    protected boolean isOlder(int age) {
+        return (this.age > age) ? true : false;
+    }
+
+    protected boolean sameName(Bird bird) {
+        return this.name.equalsIgnoreCase(bird.getName());
     }
 }

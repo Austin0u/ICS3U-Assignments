@@ -5,7 +5,7 @@ public class Main {
         Bird bird = new Bird("Sparrow", 2, true);
         System.out.println("Bird: " + bird.getName() + ", Age: " + bird.getAge() + ", Can Fly: " + bird.canFly());
 
-        Waterfowl waterfowl = new Waterfowl("Swan", 3, true, true);
+        Waterfowl waterfowl = new Waterfowl("Swan", 3, true, true, true);
         System.out.println("Waterfowl: " + waterfowl.getName() + ", Age: " + waterfowl.getAge() + ", Can Fly: " + waterfowl.canFly() + ", Can Swim: " + waterfowl.canSwim());
         waterfowl.enterWater();
         System.out.println("Is in water: " + waterfowl.isInWater());

@@ -3,31 +3,35 @@ package Inheritance;
 public class Waterfowl extends Bird {
     protected boolean inWater;
     protected boolean canSwim;
+    protected boolean hasWebbedFeet;
 
-    public Waterfowl(String name, int age, boolean canFly, boolean canSwim) {
+    public Waterfowl(String name, int age, boolean canFly, boolean canSwim, boolean hasWebbedFeet) {
         super(name, age, canFly);
         this.canSwim = canSwim;
         this.inWater = false;
+        this.hasWebbedFeet = hasWebbedFeet;
     }
 
-    public boolean canSwim() {
+    protected boolean canSwim() {
         return canSwim;
     }
 
-    public boolean isInWater() {
+    protected boolean isInWater() {
         return inWater;
     }
 
-    public void enterWater() {
+    protected boolean hasWebbedFeet() {
+        return hasWebbedFeet;
+    }
+
+    protected void enterWater() {
         if (canSwim) {
             inWater = true;
             System.out.println(name + " is diving into the water"); 
         }
     }
 
-    public void exitWater() {
+    protected void exitWater() {
         inWater = false;
-    }
-
-    
+    }  
 }
