@@ -51,6 +51,7 @@ public class Bird {
     // Methods
     protected void layEgg() {
         eggCount++;
+        System.out.println(name + " has laid an egg");
     }
 
     protected void startFlying() {
@@ -71,5 +72,9 @@ public class Bird {
 
     protected boolean sameName(Bird bird) {
         return this.name.equalsIgnoreCase(bird.getName());
+    }
+
+    protected void makeNoise(String noise) {
+        System.out.println(this.name + " quacks!");
     }
 }

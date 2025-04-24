@@ -12,6 +12,10 @@ public class Waterfowl extends Bird {
         this.hasWebbedFeet = hasWebbedFeet;
     }
 
+    public Waterfowl(String name, boolean canFly, boolean canSwim, boolean hasWebbedFeet) {
+        this(name, 0, canFly, canSwim, hasWebbedFeet);
+    }
+
     protected boolean canSwim() {
         return canSwim;
     }
@@ -33,5 +37,6 @@ public class Waterfowl extends Bird {
 
     protected void exitWater() {
         inWater = false;
+        System.out.println(name + " leaves the water"); 
     }  
 }
