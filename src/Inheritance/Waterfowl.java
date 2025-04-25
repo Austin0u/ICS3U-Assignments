@@ -11,7 +11,6 @@ public class Waterfowl extends Bird {
         this.canSwim = canSwim;
         this.inWater = false;
         this.hasWebbedFeet = hasWebbedFeet;
-        this.noise = noise;
         this.waterTypeTolerance = waterTypeTolerance;
     }
 

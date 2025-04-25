@@ -39,13 +39,13 @@ public class Main {
         System.out.println("> Can Fly: " + duck1.canFly());
         System.out.println("> Can Swim: " + duck1.canSwim());
         System.out.println("> Breed: " + duck1.getBreed());
-        System.out.println("> Plumage Pattern: " + duck1.getPlumagePattern());
+        System.out.println("> Plumage Pattern: " + duck1.getPattern());
         System.out.println("\n> Duck 2: " + duck2.getName());
         System.out.println("> Age: " + duck2.getAge());
         System.out.println("> Can Fly: " + duck2.canFly());
         System.out.println("> Can Swim: " + duck2.canSwim());
         System.out.println("> Breed: " + duck2.getBreed());
-        System.out.println("> Plumage Pattern: " + duck2.getPlumagePattern());
+        System.out.println("> Plumage Pattern: " + duck2.getPattern());
         System.out.println("---------------------------------");
 
         duck1.enterWater("freshwater");
@@ -56,7 +56,7 @@ public class Main {
         duck2.enterWater("saltwater");
         System.out.println("> Is " + duck2.getName() + " in Water: " + duck2.isInWater());
 
-        duck1.quack();
+        duck1.makeNoise();
         duck2.layEgg();
         System.out.println("> Is " + duck1.getName() + " the Same Breed as " + duck2.getName() + ": " + duck1.isSameBreed(duck2));
         System.out.println("> Do " + duck1.getName() + " and " + duck2.getName() + " Have the Same Plumage Pattern: " + duck1.hasSamePattern(duck2));
