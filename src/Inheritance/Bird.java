@@ -6,17 +6,24 @@ public class Bird {
     protected boolean canFly;
     protected boolean isFlying;
     protected int eggCount;
+    protected String noise;
 
     // Constructors
-    public Bird(String name, int age, boolean canFly) {
+    public Bird(String name, int age, boolean canFly, String noise) {
         this.name = name;
         this.age = age;
         this.canFly = canFly;
+        this.isFlying = false;
         this.eggCount = 0;
+        this.noise = noise;
+    }
+
+    public Bird(String name, int age) {
+        this(name, age, true, "chirp");
     }
 
     public Bird(String name) {
-        this(name, 0, true);
+        this(name, 0, true, "chirp");
     }
 
     // Getters and Setters
@@ -34,7 +41,7 @@ public class Bird {
 
     protected int eggCount() {
         return eggCount;
-    }   
+    }
 
     protected void setName(String name) {
         this.name = name;
@@ -47,7 +54,7 @@ public class Bird {
     protected boolean isInAir() {
         return isFlying;
     }
-    
+
     // Methods
     protected void layEgg() {
         eggCount++;
@@ -62,19 +69,25 @@ public class Bird {
     }
 
     protected void stopFlying() {
-        isFlying = false;
-        System.out.println(name + " has stopped flying");
+        if (!canFly) {
+            System.out.println(name + " cannot fly");
+        } else if (isFlying) {
+            isFlying = false;
+            System.out.println(name + " has stopped flying");
+        } else {
+            System.out.println(name + " is already on the ground");
+        }
     }
 
-    protected boolean isOlder(int age) {
-        return (this.age > age) ? true : false;
+    protected boolean isOlder(Bird bird) {
+        return (this.age > bird.getAge()) ? true : false;
     }
 
     protected boolean sameName(Bird bird) {
         return this.name.equalsIgnoreCase(bird.getName());
     }
 
-    protected void makeNoise(String noise) {
-        System.out.println(this.name + " quacks!");
+    protected void makeNoise() {
+        System.out.println(this.name + " " + this.noise + "s");
     }
 }
