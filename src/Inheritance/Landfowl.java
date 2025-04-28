@@ -1,3 +1,4 @@
+// alternative
 package Inheritance;
 
 public class Landfowl extends Bird {
