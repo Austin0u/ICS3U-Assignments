@@ -55,7 +55,7 @@ public class Bird {
         return isFlying;
     }
 
-    // Methods
+    // Instance Methods
     protected void layEgg() {
         eggCount++;
         System.out.println(name + " has laid an egg");

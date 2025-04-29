@@ -14,6 +14,7 @@ public class Waterfowl extends Bird {
         this.waterTypeTolerance = waterTypeTolerance;
     }
 
+    // Getters
     protected boolean canSwim() {
         return canSwim;
     }
@@ -30,6 +31,7 @@ public class Waterfowl extends Bird {
         return waterTypeTolerance;
     }
 
+    // Instance Methods
     protected boolean checkWaterTolerance(String waterType) {
         return waterType.equalsIgnoreCase(waterTypeTolerance) || waterTypeTolerance.equalsIgnoreCase("both");
     }
