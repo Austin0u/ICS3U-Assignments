@@ -15,7 +15,7 @@ public enum Element {
     private String symbol;
     private int atomicNumber;
     private double atomicMass;
-    private final double avogadrosNumber = 6.02214076e23;
+    private final double AVOGADROS_NUMBER = 6.02214076e23;
 
     Element(String symbol, int atomicNumber, double atomicMass) {
         this.symbol = symbol;
@@ -44,11 +44,11 @@ public enum Element {
     }
 
     public double atomsToMoles(double atoms) {
-        return atoms / avogadrosNumber;
+        return atoms / AVOGADROS_NUMBER;
     }
 
     public double molesToAtoms(double moles) {
-        return moles * avogadrosNumber;
+        return moles * AVOGADROS_NUMBER;
     }
 
     public double massToAtoms(double mass) {
