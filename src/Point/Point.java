@@ -1,4 +1,4 @@
-package Point; // Don't mind this; Just here since all the assignments are in one folder.
+package Point; 
 
 public class Point {
     private double x;
